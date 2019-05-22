@@ -13,10 +13,10 @@ namespace Empleado.BOL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class EmpleadoDbEntities : DbContext
+    public partial class EmpDbEntities : DbContext
     {
-        public EmpleadoDbEntities()
-            : base("name=EmpleadoDbEntities")
+        public EmpDbEntities()
+            : base("name=EmpDbEntities")
         {
         }
     

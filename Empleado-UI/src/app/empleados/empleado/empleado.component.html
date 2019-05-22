@@ -1,3 +1,78 @@
-<p>
-  empleado works!
-</p>
+<form #form="ngForm" (submit)="alAceptar(form)" autocomplete="off">
+  <div class="form-group">
+    <label>Nombre</label>
+    <input
+      name="Nombre"
+      #Nombre="ngModel"
+      [(ngModel)]="empleadoService.empleado.Nombre"
+      class="form-control"
+      required
+    />
+    <div *ngIf="Nombre.invalid && Nombre.touched" class="validation-error">
+      Este campo es obligatorio.
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Apellido</label>
+    <input
+      name="Apellido"
+      #Apellido="ngModel"
+      [(ngModel)]="empleadoService.empleado.Apellido"
+      class="form-control"
+      required
+    />
+    <div *ngIf="Apellido.invalid && Apellido.touched" class="validation-error">
+      Este campo es obligatorio.
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Posición</label>
+    <input
+      name="Posicion"
+      #Posicion="ngModel"
+      [(ngModel)]="empleadoService.empleado.Posicion"
+      class="form-control"
+      required
+    />
+    <div *ngIf="Posicion.invalid && Posicion.touched" class="validation-error">
+      Este campo es obligatorio.
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Código de empleado</label>
+      <input
+        name="EmpCodigo"
+        #EmpCodigo="ngModel"
+        [(ngModel)]="empleadoService.empleado.EmpCodigo"
+        class="form-control"
+        required
+      />
+      <div *ngIf="EmpCodigo.invalid && EmpCodigo.touched" class="validation-error">
+        Este campo es obligatorio.
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label>Teléfono</label>
+      <input
+        name="Telefono"
+        #Telefono="ngModel"
+        [(ngModel)]="empleadoService.empleado.Telefono"
+        class="form-control"
+        required
+      />
+      <div *ngIf="Telefono.invalid && Telefono.touched" class="validation-error">
+        Este campo es obligatorio.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <button
+      type="submit"
+      [disabled]="form.invalid"
+      class="btn btn-outline-success btn-block"
+    >
+      Aceptar
+    </button>
+  </div>
+</form>

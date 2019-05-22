@@ -11,7 +11,7 @@ namespace Empleado.WebAPI.Controllers
 {
     public class EmpleadoController : ApiController
     {
-        private EmpleadoDbEntities db = new EmpleadoDbEntities();
+        private EmpDbEntities db = new EmpDbEntities();
 
         // GET: api/Empleado
         public IQueryable<BOL.Empleado> GetEmpleado()
@@ -37,7 +37,9 @@ namespace Empleado.WebAPI.Controllers
         public async Task<IHttpActionResult> PutEmpleado(int id, BOL.Empleado empleado)
         {
             if (id != empleado.Id)
+            {
                 return BadRequest();
+            }
 
             db.Entry(empleado).State = EntityState.Modified;
 
@@ -95,7 +97,9 @@ namespace Empleado.WebAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool EmpleadoExists(int id)=> db.Empleado.Count(e => e.Id == id) > 0;
-        
+        private bool EmpleadoExists(int id)
+        {
+            return db.Empleado.Count(e => e.Id == id) > 0;
+        }
     }
 }

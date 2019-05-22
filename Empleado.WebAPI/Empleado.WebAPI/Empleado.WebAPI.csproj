@@ -267,7 +267,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Empleado.BOL\Empleado.BOL.csproj">
-      <Project>{484b1199-8c99-44bf-ad9f-a3d27e02b641}</Project>
+      <Project>{3aad51e0-8796-4916-8cf1-1f5955d781e2}</Project>
       <Name>Empleado.BOL</Name>
     </ProjectReference>
   </ItemGroup>
