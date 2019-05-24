@@ -1,4 +1,10 @@
 <form #form="ngForm" (submit)="alAceptar(form)" autocomplete="off">
+  <input
+    type="hidden"
+    name="Id"
+    #Id="ngModel"
+    [(ngModel)]="empleadoService.empleado.Id"
+  />
   <div class="form-group">
     <label>Nombre</label>
     <input
@@ -48,7 +54,10 @@
         class="form-control"
         required
       />
-      <div *ngIf="EmpCodigo.invalid && EmpCodigo.touched" class="validation-error">
+      <div
+        *ngIf="EmpCodigo.invalid && EmpCodigo.touched"
+        class="validation-error"
+      >
         Este campo es obligatorio.
       </div>
     </div>
@@ -61,7 +70,10 @@
         class="form-control"
         required
       />
-      <div *ngIf="Telefono.invalid && Telefono.touched" class="validation-error">
+      <div
+        *ngIf="Telefono.invalid && Telefono.touched"
+        class="validation-error"
+      >
         Este campo es obligatorio.
       </div>
     </div>
@@ -70,7 +82,7 @@
     <button
       type="submit"
       [disabled]="form.invalid"
-      class="btn btn-outline-success btn-block"
+      class="btn-lg btn btn-outline-success btn-block"
     >
       Aceptar
     </button>

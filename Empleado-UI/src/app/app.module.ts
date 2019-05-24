@@ -9,6 +9,9 @@ import { EmpleadoComponent } from "./empleados/empleado/empleado.component";
 import { EmpleadoListaComponent } from "./empleados/empleado-lista/empleado-lista.component";
 import { EmpleadoService } from "./compartido/servicios/empleado.service";
 import { HttpClientModule } from "@angular/common/http";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
+import { ToastrModule } from "ngx-toastr";
 
 @NgModule({
   declarations: [
@@ -17,7 +20,14 @@ import { HttpClientModule } from "@angular/common/http";
     EmpleadoComponent,
     EmpleadoListaComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule, 
+    ToastrModule.forRoot()
+  ],
   providers: [EmpleadoService],
   bootstrap: [AppComponent]
 })
